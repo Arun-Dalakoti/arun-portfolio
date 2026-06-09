@@ -6,7 +6,7 @@ export const Button = ({
   children,
 }: {
   className?: string;
-  size: string;
+  size?: string;
   children: ReactNode;
 }) => {
   const baseClasses =
