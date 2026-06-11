@@ -1,6 +1,6 @@
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 import { Button } from "@/components/Button";
-import { ArrowRight, ChevronDown, Download, Square } from "lucide-react";
+import { ArrowRight, ChevronDown, Download } from "lucide-react";
 
 const skills = ["React", "Next.js", "Typescript", "Tailwind CSS", "Git"];
 
@@ -21,6 +21,7 @@ export const Hero = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(30)].map((_, i) => (
           <div
+            key={i}
             className="absolute w-1.5 h-1.5 rounded-full opacity-60"
             style={{
               backgroundColor: "#20B2A6",

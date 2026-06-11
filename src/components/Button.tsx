@@ -1,15 +1,18 @@
-import { ReactNode } from "react";
+import { ButtonHTMLAttributes, ReactNode } from "react";
+
+type ButtonSize = "sm" | "default" | "lg";
+
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  size?: ButtonSize;
+  children: ReactNode;
+}
 
 export const Button = ({
   className = "",
   size = "default",
   children,
   ...props
-}: {
-  className?: string;
-  size?: string;
-  children: ReactNode;
-}) => {
+}: ButtonProps) => {
   const baseClasses =
     "relative overflow-hidden rounded-full font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25";
 

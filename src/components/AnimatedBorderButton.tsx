@@ -1,4 +1,6 @@
-export const AnimatedBorderButton = ({ children }) => {
+import { ReactNode } from "react";
+
+export const AnimatedBorderButton = ({ children }: { children: ReactNode }) => {
   return (
     <button
       className="relative bg-transparent border border-border 
