@@ -111,6 +111,9 @@ export const Hero = () => {
                   src="/profile-photo.png"
                   alt="Pedro Machado"
                   className="w-full aspect-[4/5] object-cover rounded-2xl"
+                  fetchPriority="high"
+                  loading="eager"
+                  decoding="async"
                 />
 
                 {/* Floating Badge */}
