@@ -1,6 +1,7 @@
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 import { Button } from "@/components/Button";
 import { ArrowRight, ChevronDown, Download } from "lucide-react";
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 const skills = ["React", "Next.js", "Typescript", "Tailwind CSS", "Git"];
 
@@ -81,9 +82,9 @@ export const Hero = () => {
             <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
               <span className="text-sm text-muted-foreground">Follow me: </span>
               {[
-                { icon: ChevronDown, href: "#" },
-                { icon: ChevronDown, href: "#" },
-                { icon: ChevronDown, href: "#" },
+                { icon: FaGithub, href: "#" },
+                { icon: FaLinkedin, href: "#" },
+                { icon: FaXTwitter, href: "#" },
               ].map((social, idx) => (
                 <a
                   key={idx}

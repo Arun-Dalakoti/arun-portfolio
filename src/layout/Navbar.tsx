@@ -9,7 +9,7 @@ const navLinks = [
   { href: "#testimonials", label: "Testimonials" },
 ];
 
-const Navbar = () => {
+export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -91,5 +91,3 @@ const Navbar = () => {
     </header>
   );
 };
-
-export default Navbar;
