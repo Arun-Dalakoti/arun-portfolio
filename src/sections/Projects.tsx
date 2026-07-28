@@ -1,41 +1,13 @@
 import { ArrowUpRight } from "lucide-react";
-import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
+
 const projects = [
   {
-    title: "Fintech Dashboard",
+    title: "Omnifood",
     description:
-      "A comprehensive financial analytics platform with real-time data visualization, portfolio management, and AI-powered insights.",
-    image: "/projects/project1.png",
-    tags: ["React", "Typescript", "NodeJS"],
-    link: "#",
-    github: "#",
-  },
-  {
-    title: "E-Commerce Platform",
-    description:
-      "A full-featured e-commerce solution with inventory management, payment processing, and analytics dashboard.",
-    image: "/projects/project1.png",
-    tags: ["Next.js", "Stripe", "PostgreSQL", "Tailwind"],
-    link: "#",
-    github: "#",
-  },
-  {
-    title: "AI Writing Assistant",
-    description:
-      "An intelligent writing tool powered by GPT-4, helping users create better content faster.",
-    image: "/projects/project1.png",
-    tags: ["React", "OpenAI", "Python", "FastAPI"],
-    link: "#",
-    github: "#",
-  },
-  {
-    title: "Project Management Tool",
-    description:
-      "A collaborative workspace for teams with real-time updates, task tracking, and integrations.",
-    image: "/projects/project1.png",
-    tags: ["Next.js", "Socket.io", "MongoDB", "Redis"],
-    link: "#",
-    github: "#",
+      "A full-stack meal discovery experience with an API-driven homepage, searchable and filterable catalogue, responsive meal details, and production deployments.",
+    image: "/projects/omnifood.png",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "Express"],
+    link: "https://omnifood-zeta-sepia.vercel.app/",
   },
 ];
 
@@ -59,19 +31,19 @@ export const Projects = () => {
             </span>
           </h2>
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            A selection of my recent work, from complex web applications to
-            innovative tools that solve real-world problems.
+            A growing collection of products I have designed and built to solve
+            real-world problems across frontend and backend systems.
           </p>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="mx-auto grid max-w-4xl gap-8">
           {/* Important note: In this we want to add hover property in all the children so one simple solution is to add group 
           class in parent and then in child use group-hover: -> Mouse pointer touches any part of the parent container. 
           Requires the group class on the parent element. */}
           {projects.map((project, idx) => (
             <div
-              key={idx}
+              key={project.title}
               className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
               style={{ animationDelay: `${(idx + 1) * 100}ms` }}
             >
@@ -91,15 +63,11 @@ export const Projects = () => {
                 <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a
                     href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Open ${project.title} live website`}
                     className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
                   >
-                    <ArrowUpRight className="w-5 h-5" />
-                  </a>
-                  <a
-                    href={project.github}
-                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
-                  >
-                    {/* todo: change later to github icon */}
                     <ArrowUpRight className="w-5 h-5" />
                   </a>
                 </div>
@@ -108,9 +76,14 @@ export const Projects = () => {
               {/* Content */}
               <div className="p-6 space-y-4">
                 <div className="flex items-start justify-between">
-                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-xl font-semibold group-hover:text-primary transition-colors"
+                  >
                     {project.title}
-                  </h3>
+                  </a>
                   <ArrowUpRight
                     className="w-5 h-5 
                   text-muted-foreground group-hover:text-primary
@@ -122,9 +95,9 @@ export const Projects = () => {
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, tagIdx) => (
+                  {project.tags.map((tag) => (
                     <span
-                      key={tagIdx}
+                      key={tag}
                       className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300"
                     >
                       {tag}
@@ -136,13 +109,6 @@ export const Projects = () => {
           ))}
         </div>
 
-        {/* View All CTA */}
-        <div className="text-center mt-12 animate-fade-in animation-delay-500">
-          <AnimatedBorderButton>
-            View All Projects
-            <ArrowUpRight className="w-5 h-5" />
-          </AnimatedBorderButton>
-        </div>
       </div>
     </section>
   );
