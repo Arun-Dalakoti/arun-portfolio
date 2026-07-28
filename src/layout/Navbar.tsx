@@ -135,7 +135,7 @@ export const Navbar = () => {
         <button
           type="button"
           aria-label="Close navigation menu backdrop"
-          className="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm md:hidden animate-fade-in cursor-default"
+          className="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm md:hidden animate-fade-in cursor-pointer"
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}
