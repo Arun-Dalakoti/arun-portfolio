@@ -14,19 +14,19 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "pedro@example.com",
-    href: "mailto:pedro@example.com",
+    value: "dalakotiarun8@gmail.com",
+    href: "mailto:dalakotiarun8@gmail.com",
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567",
+    value: "+91 7017073713",
+    href: "tel:+917017073713",
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "San Francisco, CA",
+    value: "Gurugram, India",
     href: "#",
   },
 ];
@@ -105,8 +105,8 @@ export const Contact = () => {
             </span>
           </h2>
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            Have a project in mind? I'd love to hear about it. Send me a message
-            and let's discuss how we can work together.
+            Have a frontend product, architecture, or performance challenge in
+            mind? Send me a message and let's discuss how we can work together.
           </p>
         </div>
 
@@ -238,12 +238,13 @@ export const Contact = () => {
             <div className="glass rounded-3xl p-8 border border-primary/30">
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                <span className="font-medium">Currently Available</span>
+                <span className="font-medium">Frontend at Scale</span>
               </div>
               <p className="text-muted-foreground text-sm">
-                I'm currently open to new opportunities and exciting projects.
-                Whether you need a full-time engineer or a freelance consultant,
-                let's talk!
+                I specialize in high-performance frontend systems,
+                microfrontends, reusable product experiences,
+                internationalization, checkout journeys, and reliable
+                integrations built for millions of monthly users.
               </p>
             </div>
           </div>

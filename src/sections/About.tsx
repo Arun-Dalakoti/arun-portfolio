@@ -3,26 +3,27 @@ import { Code2, Lightbulb, Rocket, Users } from "lucide-react";
 const highlights = [
   {
     icon: Code2,
-    title: "Clean Code",
+    title: "10M+ Users",
     description:
-      "Writing maintainable, scalable code that stands the test of time.",
+      "Building scalable web experiences that serve more than 10 million users each month.",
   },
   {
     icon: Rocket,
-    title: "Performance",
+    title: "35% Faster",
     description:
-      "Optimizing for speed and delivering lightning-fast user experiences.",
+      "Improved Lighthouse performance by 35% and reduced LCP by 1.2 seconds.",
   },
   {
     icon: Users,
-    title: "Collaboration",
-    description: "Working closely with teams to bring ideas to life.",
+    title: "5 Markets",
+    description:
+      "Delivered localized experiences across UAE, KSA, Singapore, Thailand, and the US.",
   },
   {
     icon: Lightbulb,
-    title: "Innovation",
+    title: "40% Fewer Conflicts",
     description:
-      "Staying ahead with the latest technologies and best practices.",
+      "Designed a multi-repository frontend architecture that reduced deployment conflicts by 40%.",
   },
 ];
 
@@ -49,30 +50,30 @@ export const About = () => {
 
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
               <p>
-                I'm a passionate software engineer with over 5 years of
-                experience crafting digital products that make a difference. My
-                journey started with a curiosity for how things work on the web,
-                and it has evolved into a deep expertise in modern frontend
-                technologies.
+                I'm a Front-End Engineer specializing in scalable,
+                high-performance web applications and microfrontend
+                architecture. At Lenskart, I work across product and cart
+                interfaces, checkout journeys, platform architecture, and
+                international user experiences used by millions of customers.
               </p>
               <p>
-                I specialize in React, Next.js, and TypeScript, building
-                everything from sleek landing pages to complex enterprise
-                applications. My approach combines technical excellence with a
-                keen eye for design and user experience.
+                My core stack includes React, Next.js 15, TypeScript,
+                JavaScript, Tailwind CSS, Redux Toolkit, and Zustand. I also
+                work across Nginx routing, cross-origin integrations, secure
+                session flows, Core Web Vitals, and Cypress testing.
               </p>
               <p>
-                When I'm not coding, you'll find me exploring new technologies,
-                contributing to open-source projects, or sharing knowledge with
-                the developer community.
+                I hold a B.Tech in Computer Science and Engineering from Birla
+                Institute of Applied Sciences, Nainital, graduating with an 85%
+                GPA.
               </p>
             </div>
 
             <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
               <p className="text-lg font-medium italic text-foreground">
-                "My mission is to create digital experiences that are not just
-                functional, but truly delightful — products that users love to
-                use and developers love to maintain."
+                "I turn complex product, performance, and frontend architecture
+                challenges into reliable experiences and measurable business
+                outcomes."
               </p>
             </div>
           </div>

@@ -1,9 +1,24 @@
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 import { Button } from "@/components/Button";
 import { ArrowRight, ChevronDown, Download } from "lucide-react";
-import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
-const skills = ["React", "Next.js", "Typescript", "Tailwind CSS", "Git"];
+const skills = [
+  "React",
+  "Next.js 15",
+  "TypeScript",
+  "Microfrontends",
+  "Core Web Vitals",
+  "Cypress",
+  "Docker",
+];
+
+const backgroundDots = Array.from({ length: 30 }, (_, index) => ({
+  left: (index * 37) % 100,
+  top: (index * 61) % 100,
+  duration: 15 + ((index * 7) % 20),
+  delay: (index * 3) % 5,
+}));
 
 export const Hero = () => {
   return (
@@ -20,18 +35,16 @@ export const Hero = () => {
 
       {/* Green Dots */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(30)].map((_, i) => (
+        {backgroundDots.map((dot, i) => (
           <div
             key={i}
             className="absolute w-1.5 h-1.5 rounded-full opacity-60"
             style={{
               backgroundColor: "#20B2A6",
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `slow-drift ${
-                15 + Math.random() * 20
-              }s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 5}s`,
+              left: `${dot.left}%`,
+              top: `${dot.top}%`,
+              animation: `slow-drift ${dot.duration}s ease-in-out infinite`,
+              animationDelay: `${dot.delay}s`,
             }}
           />
         ))}
@@ -45,7 +58,7 @@ export const Hero = () => {
             <div className="animate-fade-in">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                Software Engineer • React Specialist
+                Senior Software Engineer • Frontend
               </span>
             </div>
 
@@ -61,18 +74,28 @@ export const Hero = () => {
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hi, I'm Arun Dalakoti — a software engineer specializing in
-                React, Next.js, and TypeScript. I build scalable, performant web
-                applications that users love.
+                Hi, I'm Arun Dalakoti — a frontend engineer building scalable,
+                high-performance web experiences for millions of users across
+                global markets.
               </p>
             </div>
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button size="lg">
+              <Button
+                size="lg"
+                onClick={() =>
+                  document
+                    .querySelector("#contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
                 Contact Me <ArrowRight className="w-5 h-5" />
               </Button>
-              <AnimatedBorderButton>
+              <AnimatedBorderButton
+                href="/Arun_Dalakoti_Resume.pdf"
+                download="Arun_Dalakoti_Resume.pdf"
+              >
                 <Download className="w-5 h-5" />
                 Download CV
               </AnimatedBorderButton>
@@ -82,13 +105,23 @@ export const Hero = () => {
             <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
               <span className="text-sm text-muted-foreground">Follow me: </span>
               {[
-                { icon: FaGithub, href: "#" },
-                { icon: FaLinkedin, href: "#" },
-                { icon: FaXTwitter, href: "#" },
+                {
+                  icon: FaGithub,
+                  href: "https://github.com/Arun-Dalakoti",
+                  label: "GitHub",
+                },
+                {
+                  icon: FaLinkedin,
+                  href: "https://www.linkedin.com/in/arun-dalakoti",
+                  label: "LinkedIn",
+                },
               ].map((social, idx) => (
                 <a
                   key={idx}
                   href={social.href}
+                  aria-label={social.label}
+                  target="_blank"
+                  rel="noreferrer"
                   className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
                 >
                   {<social.icon className="w-5 h-5" />}
@@ -109,7 +142,7 @@ export const Hero = () => {
               <div className="relative glass rounded-3xl p-2 glow-border">
                 <img
                   src="/profile-photo.webp"
-                  alt="Pedro Machado"
+                  alt="Arun Dalakoti"
                   className="w-full aspect-[4/5] object-cover rounded-2xl"
                   fetchPriority="high"
                   loading="eager"
@@ -121,7 +154,7 @@ export const Hero = () => {
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
                     <span className="text-sm font-medium">
-                      Available for work
+                      Based in Gurugram
                     </span>
                   </div>
                 </div>
@@ -165,12 +198,12 @@ export const Hero = () => {
       </div>
 
       <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 
-      animate-fade-in animation-delay-800"
+        className="absolute bottom-8 left-1/2 z-20 hidden -translate-x-1/2 md:block"
       >
         <a
           href="#about"
-          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
+          aria-label="Scroll to About section"
+          className="flex flex-col items-center gap-2 px-4 py-2 text-muted-foreground hover:text-primary transition-colors group animate-fade-in animation-delay-800"
         >
           <span className="text-xs uppercase tracking-wider">Scroll</span>
           <ChevronDown className="w-6 h-6 animate-bounce" />

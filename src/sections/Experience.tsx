@@ -1,38 +1,48 @@
 const experiences = [
   {
-    period: "2022 — Present",
-    role: "Senior Frontend Engineer",
-    company: "Tech Innovators Inc.",
+    period: "Apr 2025 — Present",
+    role: "Senior Software Engineer — Frontend",
+    company: "Lenskart • Gurugram, India",
     description:
-      "Leading frontend architecture for a suite of fintech products. Implemented micro-frontend architecture, reduced bundle size by 40%, and mentored a team of 5 developers.",
-    technologies: ["React", "TypeScript", "Next.js", "GraphQL"],
+      "Architected a multi-repository Next.js 15 checkout microfrontend with Nginx routing, reducing deployment conflicts by 40% and doubling release speed. Improved Lighthouse performance by 35%, reduced LCP by 1.2s, and delivered localized checkout systems across five markets, including Apple Pay for UAE and KSA.",
+    technologies: [
+      "Next.js 15",
+      "React",
+      "TypeScript",
+      "Microfrontends",
+      "Nginx",
+      "Apple Pay",
+    ],
     current: true,
   },
   {
-    period: "2020 — 2022",
-    role: "Frontend Engineer",
-    company: "Digital Solutions Co.",
+    period: "Sep 2023 — Mar 2025",
+    role: "Software Engineer — Frontend",
+    company: "Lenskart • Gurugram, India",
     description:
-      "Built and maintained multiple React applications for enterprise clients. Introduced automated testing practices that improved code coverage to 85%.",
-    technologies: ["React", "Redux", "Jest", "Cypress"],
+      "Led the migration from PayU to the Juspay PayV3 SDK for checkout journeys handling 2M+ monthly transactions. The work increased payment success by 8%, reduced checkout drop-off by 12%, and strengthened reusable components and secure session flows across microfrontend boundaries.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Juspay PayV3",
+      "PayU",
+      "Session Management",
+    ],
     current: false,
   },
   {
-    period: "2019 — 2020",
-    role: "Junior Developer",
-    company: "StartUp Labs",
+    period: "Sep 2022 — Aug 2023",
+    role: "Front-End Intern",
+    company: "Lenskart • Gurugram, India",
     description:
-      "Contributed to the development of a SaaS platform from MVP to production. Collaborated with designers to implement pixel-perfect UI components.",
-    technologies: ["React", "Node.js", "MongoDB", "AWS"],
-    current: false,
-  },
-  {
-    period: "2018 — 2019",
-    role: "Freelance Developer",
-    company: "Self-Employed",
-    description:
-      "Delivered custom web solutions for small businesses and startups. Built 15+ websites and applications, handling everything from design to deployment.",
-    technologies: ["JavaScript", "PHP", "WordPress", "MySQL"],
+      "Built reusable product and cart interfaces with localization and RTL support for UAE, KSA, Singapore, Thailand, and the US. Added Cypress end-to-end coverage for critical journeys, helping reduce production UI bugs by 30%.",
+    technologies: [
+      "React",
+      "JavaScript",
+      "Localization",
+      "RTL",
+      "Cypress",
+    ],
     current: false,
   },
 ];
@@ -70,8 +80,9 @@ export const Experience = () => {
             className="text-muted-foreground
            animate-fade-in animation-delay-200"
           >
-            A timeline of my professional growth, from curious beginner to
-            senior engineer leading teams and building products at scale.
+            Building scalable frontend platforms, reusable product
+            experiences, checkout journeys, and international commerce
+            interfaces at Lenskart since 2022.
           </p>
         </div>
 
