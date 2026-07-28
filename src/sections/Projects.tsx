@@ -13,7 +13,7 @@ const projects = [
 
 export const Projects = () => {
   return (
-    <section id="projects" className="py-32 relative overflow-hidden">
+    <section id="projects" className="py-16 md:py-20 relative overflow-hidden">
       {/* Bg glows */}
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
@@ -42,9 +42,12 @@ export const Projects = () => {
           class in parent and then in child use group-hover: -> Mouse pointer touches any part of the parent container. 
           Requires the group class on the parent element. */}
           {projects.map((project, idx) => (
-            <div
+            <a
               key={project.title}
-              className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
+              href={project.link}
+              target="_blank"
+              rel="noreferrer"
+              className="group block glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               style={{ animationDelay: `${(idx + 1) * 100}ms` }}
             >
               {/* Image */}
@@ -59,43 +62,32 @@ export const Projects = () => {
                 bg-gradient-to-t from-card via-card/50
                  to-transparent opacity-60"
                 />
-                {/* Overlay Links */}
+                {/* Overlay action */}
                 <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`Open ${project.title} live website`}
+                  <span
+                    aria-hidden="true"
                     className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
                   >
                     <ArrowUpRight className="w-5 h-5" />
-                  </a>
+                  </span>
                 </div>
               </div>
 
               {/* Content */}
               <div className="p-6 space-y-4">
                 <div className="flex items-start justify-between">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-xl font-semibold group-hover:text-primary transition-colors"
-                  >
+                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
                     {project.title}
-                  </a>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`Open ${project.title} live website`}
+                  </h3>
+                  <span
+                    aria-hidden="true"
                     className="text-muted-foreground group-hover:text-primary"
                   >
                     <ArrowUpRight
                       className="w-5 h-5 group-hover:translate-x-1
                         group-hover:-translate-y-1 transition-all"
                     />
-                  </a>
+                  </span>
                 </div>
                 <p className="text-muted-foreground text-sm">
                   {project.description}
@@ -111,7 +103,7 @@ export const Projects = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
 

@@ -49,7 +49,10 @@ export const Testimonials = () => {
     );
   };
   return (
-    <section id="testimonials" className="py-32 relative overflow-hidden">
+    <section
+      id="testimonials"
+      className="py-16 md:py-20 relative overflow-hidden"
+    >
       <div
         className="absolute top-1/2 left-1/2
        w-[800px] h-[800px] bg-primary/5
