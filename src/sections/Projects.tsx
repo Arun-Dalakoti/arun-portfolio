@@ -84,12 +84,18 @@ export const Projects = () => {
                   >
                     {project.title}
                   </a>
-                  <ArrowUpRight
-                    className="w-5 h-5 
-                  text-muted-foreground group-hover:text-primary
-                   group-hover:translate-x-1 
-                   group-hover:-translate-y-1 transition-all"
-                  />
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Open ${project.title} live website`}
+                    className="text-muted-foreground group-hover:text-primary"
+                  >
+                    <ArrowUpRight
+                      className="w-5 h-5 group-hover:translate-x-1
+                        group-hover:-translate-y-1 transition-all"
+                    />
+                  </a>
                 </div>
                 <p className="text-muted-foreground text-sm">
                   {project.description}
